@@ -123,23 +123,32 @@ h2{margin:0 0 8px;font-size:16px}
 @keyframes ndp{50%{box-shadow:0 0 0 6px #22e3ff55}}
 nav button.rdy b::after{content:'❗';font-size:11px;position:absolute;margin:-4px 0 0 -2px}
 /* command panel */
-#cmd{display:flex;gap:4px;padding:6px 5px calc(6px + env(safe-area-inset-bottom));background:#0d0719;border-top:2px solid #ffffff18}
-.hcol{flex:1;min-width:0;background:var(--panel);border-radius:10px;padding:4px;border:2px solid transparent}
-.hcol.rdy{border-color:var(--cy);box-shadow:0 0 10px #22e3ff88}
-.hcol.dead{opacity:.3;pointer-events:none}
-.hcol.wait{opacity:.6}
-.hh{display:flex;align-items:center;gap:4px;margin-bottom:4px}
-.he{font-size:24px}
-.hbars{flex:1}
-.mb{position:relative;display:block;width:100%;height:36px;margin-top:3px;border:0;border-radius:8px;background:var(--panel2);color:var(--tx);font-size:10px;font-weight:700;padding:0 3px;overflow:hidden;line-height:1.05}
-.mb .ic{font-size:14px;display:block}
-.mb .mn{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mb .cdv{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:#000a;font-size:13px}
-.mb.cd .cdv,.mb.lock .cdv{display:flex}
-.mb.lock{opacity:.5}
-.mb.q{outline:2px solid var(--mg)}
-.mb.go{background:linear-gradient(90deg,#0e7490,#a21caf);box-shadow:0 0 8px #22e3ffaa}
-.mb.ult{border:1px solid #fbbf24}
+
+#cmd{padding:6px 8px calc(7px + env(safe-area-inset-bottom));background:#1b1620;border-top:1px solid #d2a56a65}
+.command-party{display:flex;gap:4px}
+.hcol{display:flex;align-items:center;gap:4px;flex:1;min-width:0;padding:3px 4px;background:#27202b;border:1px solid #dec08e33;border-radius:6px}
+.hcol.rdy{border-color:#edc883;background:#4b342a}
+.hcol.dead{opacity:.32}
+.he{font-size:18px;flex:none}
+.hbars{flex:1;min-width:0}
+.hbars .bar{height:4px;margin:2px 0}
+.command-header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:6px 0 4px}
+.command-header strong{font:700 15px/1.1 Georgia;color:#ffe4b6;min-width:0}
+.command-header span{flex:none;color:#d2bfab;font-size:10px;font-weight:700}
+.move-deck{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+.move-deck[hidden]{display:none}
+.mb{display:grid;grid-template-columns:23px minmax(0,1fr);align-items:center;gap:5px;min-width:0;min-height:48px;padding:4px 6px;text-align:left;border:1px solid #beaa824a;border-radius:8px;background:#302638;color:#fff1dc;font:inherit;touch-action:manipulation}
+.mb .ic{display:grid;place-items:center;min-height:23px;border-radius:5px;background:#130e18a0;font-size:15px}
+.mb .ic svg{width:16px;height:16px;stroke:currentColor;stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.mb .mn{display:block;font-weight:750;font-size:12px;line-height:1.12;overflow-wrap:anywhere}
+.mb .cdv{display:block;margin-top:2px;color:#cfbead;font-size:9px;font-weight:700;line-height:1.15}
+.mb.ult{border-color:#e5b15d;background:#3b2b2c}
+.mb.go{background:linear-gradient(145deg,#694b3f,#35283a);border-color:#e6bb7c}
+.mb.go .cdv{color:#ffe3a2}
+.mb.go.ult{background:linear-gradient(145deg,#825735,#4a3037);border-color:#ffda86}
+.mb:disabled{color:#cdbcae}
+.mb:disabled .ic{opacity:.62}
+.mb.go:active{background:#87614b}
 :root{--bg:#100e16;--panel:#201b26;--panel2:#322838;--cy:#f3cc83;--mg:#d98972;--tx:#fff3df;--dim:#d2bfab}
 html,body{background:radial-gradient(ellipse at 50% 0,#352737,#100e16 70%)}
 #app{background:linear-gradient(150deg,#201923,#100e16 70%);border-inline:1px solid #eac78924}
@@ -285,7 +294,19 @@ nav button.rdy::after{content:"";position:absolute;top:8px;left:calc(50% + 11px)
 #stage.riverbank::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(175deg,transparent 24%,#a9edcf34 46%,transparent 64%);animation:river-light 4.4s ease-in-out infinite alternate}
 @keyframes river-light{from{opacity:.18}to{opacity:.72}}
 @media(prefers-reduced-motion:reduce){#stage.riverbank::before{animation:none;opacity:.4}}
-:root{--sprite-sprite:url(assets/sprite.webp);--sprite-wolf:url(assets/wolf.webp);--sprite-archer:url(assets/archer.webp);--sprite-collector:url(assets/collector.webp);--sprite-sergeant:url(assets/sergeant.webp);--sprite-guy:url(assets/guy.webp);--sprite-sheriff:url(assets/sheriff.webp);--sprite-robin:url(assets/robin.webp);--sprite-marian:url(assets/marian.webp);--sprite-scarlet:url(assets/scarlet.webp);--sprite-tuck:url(assets/tuck.webp);--sprite-knight:url(assets/knight.webp);--sprite-wyrm:url(assets/wyrm.webp);--sprite-much:url(assets/much.webp);--sprite-alan:url(assets/alan.webp);--sprite-morgan:url(assets/morgan.webp);--sprite-raider:url(assets/raider.webp);--sprite-merry:url(assets/merry.webp);--sprite-lee:url(assets/lee.webp);--sprite-lionheart:url(assets/lionheart.webp);--sprite-hound:url(assets/hound.webp);--sprite-hag:url(assets/hag.webp);--sprite-mordred:url(assets/mordred.webp);--sprite-arthur:url(assets/arthur.webp);--sprite-merlin:url(assets/merlin.webp);--sprite-lancelot:url(assets/lancelot.webp);--sprite-guinevere:url(assets/guinevere.webp);--sprite-bedivere:url(assets/bedivere.webp);--sprite-kay:url(assets/kay.webp);--sprite-gawain:url(assets/gawain.webp);--sprite-percival:url(assets/percival.webp);--sprite-lake:url(assets/lake.webp);--sprite-galahad:url(assets/galahad.webp);--sprite-alice:url(assets/alice.webp);--sprite-hare:url(assets/hare.webp);--sprite-cardsoldier:url(assets/cardsoldier.webp);--sprite-knave:url(assets/knave.webp);--sprite-duchessenemy:url(assets/duchessenemy.webp);--sprite-executioner:url(assets/executioner.webp);--sprite-bandersnatch:url(assets/bandersnatch.webp);--sprite-queenhearts:url(assets/queenhearts.webp);--sprite-dormouse:url(assets/dormouse.webp);--sprite-dodo:url(assets/dodo.webp);--sprite-lizard:url(assets/lizard.webp);--sprite-caterpillar:url(assets/caterpillar.webp);--sprite-tweedle:url(assets/tweedle.webp);--sprite-duchesshero:url(assets/duchesshero.webp);--sprite-rabbit:url(assets/rabbit.webp);--sprite-whiteknight:url(assets/whiteknight.webp);--sprite-humpty:url(assets/humpty.webp);--sprite-redqueen:url(assets/redqueen.webp);--sprite-whitequeen:url(assets/whitequeen.webp);--sprite-glassalice:url(assets/glassalice.webp);--sprite-vorpal:url(assets/vorpal.webp);--sprite-wanderer:url(assets/wanderer.webp);--sprite-lionunicorn:url(assets/lionunicorn.webp);--sprite-walruscarpenter:url(assets/walruscarpenter.webp);--sprite-pawn:url(assets/pawn.webp);--sprite-jubjub:url(assets/jubjub.webp);--sprite-walrusthief:url(assets/walrusthief.webp);--sprite-bishop:url(assets/bishop.webp);--sprite-redknight:url(assets/redknight.webp);--sprite-jabberwock:url(assets/jabberwock.webp);--sprite-hatteratlas:url(assets/hatteratlas.webp);--sprite-cheshireatlas:url(assets/cheshireatlas.webp);--sprite-johndarling:url(assets/johndarling.webp);--sprite-michaeldarling:url(assets/michaeldarling.webp);--sprite-nana:url(assets/nana.webp);--sprite-tootles:url(assets/tootles.webp);--sprite-slightly:url(assets/slightly.webp);--sprite-tigerlily:url(assets/tigerlily.webp);--sprite-smee:url(assets/smee.webp);--sprite-tinker:url(assets/tinker.webp);--sprite-crochero:url(assets/crochero.webp);--sprite-peter:url(assets/peter.webp);--sprite-deckhand:url(assets/deckhand.webp);--sprite-piratecook:url(assets/piratecook.webp);--sprite-ticktock:url(assets/ticktock.webp);--sprite-starkey:url(assets/starkey.webp);--sprite-siren:url(assets/siren.webp);--sprite-hook:url(assets/hook.webp);--sprite-piglet:url(assets/piglet.webp);--sprite-roo:url(assets/roo.webp);--sprite-eeyore:url(assets/eeyore.webp);--sprite-beetle:url(assets/beetle.webp);--sprite-tigger:url(assets/tigger.webp);--sprite-woodrabbit:url(assets/woodrabbit.webp);--sprite-owl:url(assets/owl.webp);--sprite-kanga:url(assets/kanga.webp);--sprite-christopher:url(assets/christopher.webp);--sprite-pooh:url(assets/pooh.webp);--sprite-bees:url(assets/bees.webp);--sprite-woozle:url(assets/woozle.webp);--sprite-gloom:url(assets/gloom.webp);--sprite-heffalump:url(assets/heffalump.webp);--sprite-thistle:url(assets/thistle.webp);--sprite-backson:url(assets/backson.webp);--sprite-mole:url(assets/mole.webp);--sprite-waterrat:url(assets/waterrat.webp);--sprite-otter:url(assets/otter.webp);--sprite-portly:url(assets/portly.webp);--sprite-bargewoman:url(assets/bargewoman.webp);--sprite-toad:url(assets/toad.webp);--sprite-gaolerdaughter:url(assets/gaolerdaughter.webp);--sprite-badger:url(assets/badger.webp);--sprite-searat:url(assets/searat.webp);--sprite-piper:url(assets/piper.webp);--sprite-stoat:url(assets/stoat.webp);--sprite-weasel:url(assets/weasel.webp);--sprite-ferret:url(assets/ferret.webp);--sprite-warden:url(assets/warden.webp);--sprite-woodfox:url(assets/woodfox.webp);--sprite-chiefweasel:url(assets/chiefweasel.webp);}:root{--realm-campaignmap:url(assets/campaignmap.webp);--realm-sherwood:url(assets/sherwood.webp);--realm-camelotmap:url(assets/camelotmap.webp);--realm-camelot:url(assets/camelot.webp);--realm-wonderlandmap:url(assets/wonderlandmap.webp);--realm-wonderland:url(assets/wonderland.webp);--realm-glassmap:url(assets/glassmap.webp);--realm-glassarena:url(assets/glassarena.webp);--realm-nevermap:url(assets/nevermap.webp);--realm-neverarena:url(assets/neverarena.webp);--realm-woodmap:url(assets/woodmap.webp);--realm-woodarena:url(assets/woodarena.webp);--realm-rivermap:url(assets/rivermap.webp);--realm-riverarena:url(assets/riverarena.webp);}:root{--portrait-hatterportrait:url(assets/hatterportrait.webp);--portrait-cheshireportrait:url(assets/cheshireportrait.webp);--portrait-tinkerportrait:url(assets/tinkerportrait.webp);--portrait-smeeportrait:url(assets/smeeportrait.webp);}@media(max-aspect-ratio:4/5){#stage.glass{background-image:url(assets/glassmobile.webp)!important}}@media(max-aspect-ratio:4/5){#stage.neverland{background-image:url(assets/nevermobile.webp)!important}}@media(max-aspect-ratio:4/5){#stage.hundredwood{background-image:url(assets/woodmobile.webp)!important}}@media(max-aspect-ratio:4/5){#stage.riverbank{background-image:url(assets/rivermobile.webp)!important}}</style>
+
+.lineup-grid{display:grid;gap:5px}
+.lineup-grid .fighter{margin:0;height:100%}
+.matchup.compact{grid-template-columns:minmax(0,1fr) 23px minmax(0,1fr);gap:4px}
+.matchup.compact .lineup-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:4px}
+.matchup.compact .lineup-grid[data-count="1"]{grid-template-columns:minmax(0,1fr)}
+.matchup.compact .lineup-grid[data-count="1"] .fighter{width:min(100%,112px);justify-self:center}
+.matchup.compact .fighter{justify-content:flex-start;padding:4px 3px 6px}
+.matchup.compact .fighter-art{height:clamp(38px,12vw,65px);font-size:clamp(28px,10vw,57px)}
+.matchup.compact .fighter strong{font-size:clamp(10px,2.8vw,13px);line-height:1.12}
+.matchup.compact .fighter .small{font-size:9px;line-height:1.15}
+.matchup.compact .versus{margin-top:40px;font-size:14px}
+:root{--sprite-sprite:url(assets/sprite.webp);--sprite-wolf:url(assets/wolf.webp);--sprite-archer:url(assets/archer.webp);--sprite-collector:url(assets/collector.webp);--sprite-sergeant:url(assets/sergeant.webp);--sprite-guy:url(assets/guy.webp);--sprite-sheriff:url(assets/sheriff.webp);--sprite-robin:url(assets/robin.webp);--sprite-marian:url(assets/marian.webp);--sprite-scarlet:url(assets/scarlet.webp);--sprite-tuck:url(assets/tuck.webp);--sprite-knight:url(assets/knight.webp);--sprite-wyrm:url(assets/wyrm.webp);--sprite-much:url(assets/much.webp);--sprite-alan:url(assets/alan.webp);--sprite-morgan:url(assets/morgan.webp);--sprite-raider:url(assets/raider.webp);--sprite-merry:url(assets/merry.webp);--sprite-lee:url(assets/lee.webp);--sprite-lionheart:url(assets/lionheart.webp);--sprite-hound:url(assets/hound.webp);--sprite-hag:url(assets/hag.webp);--sprite-mordred:url(assets/mordred.webp);--sprite-arthur:url(assets/arthur.webp);--sprite-merlin:url(assets/merlin.webp);--sprite-lancelot:url(assets/lancelot.webp);--sprite-guinevere:url(assets/guinevere.webp);--sprite-bedivere:url(assets/bedivere.webp);--sprite-kay:url(assets/kay.webp);--sprite-gawain:url(assets/gawain.webp);--sprite-percival:url(assets/percival.webp);--sprite-lake:url(assets/lake.webp);--sprite-galahad:url(assets/galahad.webp);--sprite-alice:url(assets/alice.webp);--sprite-hare:url(assets/hare.webp);--sprite-cardsoldier:url(assets/cardsoldier.webp);--sprite-knave:url(assets/knave.webp);--sprite-duchessenemy:url(assets/duchessenemy.webp);--sprite-executioner:url(assets/executioner.webp);--sprite-bandersnatch:url(assets/bandersnatch.webp);--sprite-queenhearts:url(assets/queenhearts.webp);--sprite-dormouse:url(assets/dormouse.webp);--sprite-dodo:url(assets/dodo.webp);--sprite-lizard:url(assets/lizard.webp);--sprite-caterpillar:url(assets/caterpillar.webp);--sprite-tweedle:url(assets/tweedle.webp);--sprite-duchesshero:url(assets/duchesshero.webp);--sprite-rabbit:url(assets/rabbit.webp);--sprite-whiteknight:url(assets/whiteknight.webp);--sprite-humpty:url(assets/humpty.webp);--sprite-redqueen:url(assets/redqueen.webp);--sprite-whitequeen:url(assets/whitequeen.webp);--sprite-glassalice:url(assets/glassalice.webp);--sprite-vorpal:url(assets/vorpal.webp);--sprite-wanderer:url(assets/wanderer.webp);--sprite-lionunicorn:url(assets/lionunicorn.webp);--sprite-walruscarpenter:url(assets/walruscarpenter.webp);--sprite-pawn:url(assets/pawn.webp);--sprite-jubjub:url(assets/jubjub.webp);--sprite-walrusthief:url(assets/walrusthief.webp);--sprite-bishop:url(assets/bishop.webp);--sprite-redknight:url(assets/redknight.webp);--sprite-jabberwock:url(assets/jabberwock.webp);--sprite-hatteratlas:url(assets/hatteratlas.webp);--sprite-cheshireatlas:url(assets/cheshireatlas.webp);--sprite-johndarling:url(assets/johndarling.webp);--sprite-michaeldarling:url(assets/michaeldarling.webp);--sprite-nana:url(assets/nana.webp);--sprite-tootles:url(assets/tootles.webp);--sprite-slightly:url(assets/slightly.webp);--sprite-tigerlily:url(assets/tigerlily.webp);--sprite-smee:url(assets/smee.webp);--sprite-tinker:url(assets/tinker.webp);--sprite-crochero:url(assets/crochero.webp);--sprite-peter:url(assets/peter.webp);--sprite-deckhand:url(assets/deckhand.webp);--sprite-piratecook:url(assets/piratecook.webp);--sprite-ticktock:url(assets/ticktock.webp);--sprite-starkey:url(assets/starkey.webp);--sprite-siren:url(assets/siren.webp);--sprite-hook:url(assets/hook.webp);--sprite-piglet:url(assets/piglet.webp);--sprite-roo:url(assets/roo.webp);--sprite-eeyore:url(assets/eeyore.webp);--sprite-beetle:url(assets/beetle.webp);--sprite-tigger:url(assets/tigger.webp);--sprite-woodrabbit:url(assets/woodrabbit.webp);--sprite-owl:url(assets/owl.webp);--sprite-kanga:url(assets/kanga.webp);--sprite-christopher:url(assets/christopher.webp);--sprite-pooh:url(assets/pooh.webp);--sprite-bees:url(assets/bees.webp);--sprite-woozle:url(assets/woozle.webp);--sprite-gloom:url(assets/gloom.webp);--sprite-heffalump:url(assets/heffalump.webp);--sprite-thistle:url(assets/thistle.webp);--sprite-backson:url(assets/backson.webp);--sprite-mole:url(assets/mole.webp);--sprite-waterrat:url(assets/waterrat.webp);--sprite-otter:url(assets/otter.webp);--sprite-portly:url(assets/portly.webp);--sprite-bargewoman:url(assets/bargewoman.webp);--sprite-toad:url(assets/toad.webp);--sprite-gaolerdaughter:url(assets/gaolerdaughter.webp);--sprite-badger:url(assets/badger.webp);--sprite-searat:url(assets/searat.webp);--sprite-piper:url(assets/piper.webp);--sprite-stoat:url(assets/stoat.webp);--sprite-weasel:url(assets/weasel.webp);--sprite-ferret:url(assets/ferret.webp);--sprite-warden:url(assets/warden.webp);--sprite-woodfox:url(assets/woodfox.webp);--sprite-chiefweasel:url(assets/chiefweasel.webp);--sprite-flopsy:url(assets/flopsy.webp);--sprite-mopsy:url(assets/mopsy.webp);--sprite-cottontail:url(assets/cottontail.webp);--sprite-tomkitten:url(assets/tomkitten.webp);--sprite-benjamin:url(assets/benjamin.webp);--sprite-jemima:url(assets/jemima.webp);--sprite-nutkin:url(assets/nutkin.webp);--sprite-tiggy:url(assets/tiggy.webp);--sprite-jeremy:url(assets/jeremy.webp);--sprite-peterbunny:url(assets/peterbunny.webp);--sprite-crow:url(assets/crow.webp);--sprite-slug:url(assets/slug.webp);--sprite-foragingrat:url(assets/foragingrat.webp);--sprite-oldbrown:url(assets/oldbrown.webp);--sprite-todfox:url(assets/todfox.webp);--sprite-mcgregor:url(assets/mcgregor.webp);--sprite-oberon:url(assets/oberon.webp);}:root{--sprite-johnspecial:url(assets/johnspecial.webp);--sprite-oberonspecial:url(assets/oberonspecial.webp);}:root{--realm-campaignmap:url(assets/campaignmap.webp);--realm-sherwood:url(assets/sherwood.webp);--realm-camelotmap:url(assets/camelotmap.webp);--realm-camelot:url(assets/camelot.webp);--realm-wonderlandmap:url(assets/wonderlandmap.webp);--realm-wonderland:url(assets/wonderland.webp);--realm-glassmap:url(assets/glassmap.webp);--realm-glassarena:url(assets/glassarena.webp);--realm-nevermap:url(assets/nevermap.webp);--realm-neverarena:url(assets/neverarena.webp);--realm-woodmap:url(assets/woodmap.webp);--realm-woodarena:url(assets/woodarena.webp);--realm-rivermap:url(assets/rivermap.webp);--realm-riverarena:url(assets/riverarena.webp);--realm-gardenmap:url(assets/gardenmap.webp);--realm-gardenarena:url(assets/gardenarena.webp);}:root{--portrait-hatterportrait:url(assets/hatterportrait.webp);--portrait-cheshireportrait:url(assets/cheshireportrait.webp);--portrait-tinkerportrait:url(assets/tinkerportrait.webp);--portrait-smeeportrait:url(assets/smeeportrait.webp);--portrait-oberonportrait:url(assets/oberonportrait.webp);}@media(max-aspect-ratio:4/5){#stage.glass{background-image:url(assets/glassmobile.webp)!important}}@media(max-aspect-ratio:4/5){#stage.neverland{background-image:url(assets/nevermobile.webp)!important}}@media(max-aspect-ratio:4/5){#stage.hundredwood{background-image:url(assets/woodmobile.webp)!important}}@media(max-aspect-ratio:4/5){#stage.riverbank{background-image:url(assets/rivermobile.webp)!important}}@media(max-aspect-ratio:4/5){#stage.beatrix{background-image:url(assets/gardenmobile.webp)!important}}</style>
 </head>
 <body>
 <section id="titleScreen" aria-labelledby="gameTitle"><div class="title-frame"><div><small>The fractured tales</small><h2 id="gameTitle">Storybook<br>Brawl</h2><small>A fractured fairy-tale adventure</small></div><button id="openBook" class="btn">Open the Book</button></div></section>
@@ -318,25 +339,26 @@ nav button.rdy::after{content:"";position:absolute;top:8px;left:calc(50% + 11px)
 
 <script>
 
-const spriteAtlases = {"Little John": "sprite", "Nottingham Hound": "wolf", "Sheriff's Archer": "archer", "Tax Collector": "collector", "Sergeant-at-Arms": "sergeant", "Guy of Gisborne": "guy", "Sheriff of Nottingham": "sheriff", "Robin Hood": "robin", "Maid Marian": "marian", "Will Scarlet": "scarlet", "Friar Tuck": "tuck", "Black Knight": "knight", "The Great Dragon": "wyrm", "Much the Miller's Son": "much", "Alan-a-Dale": "alan", "Morgan le Fay": "morgan", "Saxon Raider": "raider", "Merry Man Archer": "merry", "Sir Richard at the Lee": "lee", "King Richard the Lionheart": "lionheart", "Morgause's Hound": "hound", "Bog Hag": "hag", "Mordred's Guard": "mordred", "King Arthur": "arthur", "Merlin": "merlin", "Sir Lancelot": "lancelot", "Queen Guinevere": "guinevere", "Sir Bedivere": "bedivere", "Sir Kay": "kay", "Sir Gawain": "gawain", "Sir Percival": "percival", "Lady of the Lake": "lake", "Sir Galahad": "galahad", "Alice": "alice", "March Hare": "hare", "Card Soldier": "cardsoldier", "Knave of Hearts": "knave", "The Duchess": "duchessenemy", "Royal Executioner": "executioner", "Bandersnatch": "bandersnatch", "Queen of Hearts": "queenhearts", "Dormouse Dozer": "dormouse", "The Dodo": "dodo", "Bill the Lizard": "lizard", "Blue Caterpillar": "caterpillar", "Tweedledum and Tweedledee": "tweedle", "Wonderland Duchess": "duchesshero", "White Rabbit": "rabbit", "White Knight": "whiteknight", "Humpty Dumpty": "humpty", "Red Queen": "redqueen", "White Queen": "whitequeen", "Looking-Glass Alice": "glassalice", "Vorpal Knight": "vorpal", "Tulgey Wood Wanderer": "wanderer", "The Lion and the Unicorn": "lionunicorn", "The Walrus and the Carpenter": "walruscarpenter", "Chess Pawn": "pawn", "Jubjub Bird": "jubjub", "Walrus Thief": "walrusthief", "Red Bishop": "bishop", "Red Knight": "redknight", "Jabberwock": "jabberwock", "Mad Hatter": "hatteratlas", "Cheshire Cat": "cheshireatlas", "John Darling": "johndarling", "Michael Darling": "michaeldarling", "Nana the Nursemaid": "nana", "Tootles": "tootles", "Slightly Soiled": "slightly", "Tiger Lily": "tigerlily", "Mr. Smee": "smee", "Tinker Bell": "tinker", "The Crocodile": "crochero", "Peter Pan": "peter", "Pirate Deckhand": "deckhand", "Pirate Cook": "piratecook", "Tick-Tock Crocodile": "ticktock", "Starkey": "starkey", "Lagoon Siren": "siren", "Captain Hook": "hook", "Piglet": "piglet", "Roo": "roo", "Eeyore": "eeyore", "Small the Beetle": "beetle", "Tigger": "tigger", "Rabbit": "woodrabbit", "Wise Owl": "owl", "Kanga": "kanga", "Christopher Robin": "christopher", "Winnie-the-Pooh": "pooh", "Honey Bee Swarm": "bees", "Woozle": "woozle", "Gloomy Cloud": "gloom", "Heffalump": "heffalump", "Bouncy Thistle": "thistle", "The Great Backson": "backson", "Mole": "mole", "Water Rat": "waterrat", "Otter": "otter", "Portly the Pup": "portly", "Barge Woman": "bargewoman", "Mr. Toad": "toad", "Gaoler's Daughter": "gaolerdaughter", "Mr. Badger": "badger", "Sea Rat": "searat", "The Piper at the Gates of Dawn": "piper", "Stoat Guard": "stoat", "Weasel Sentry": "weasel", "Ferret Bruiser": "ferret", "Gaol Warden": "warden", "Wild Wood Fox": "woodfox", "Chief Weasel": "chiefweasel"};
-const characterPortraits = {"Mad Hatter": "hatterportrait", "Cheshire Cat": "cheshireportrait", "Tinker Bell": "tinkerportrait", "Mr. Smee": "smeeportrait"};
+const spriteAtlases = {"Little John": "sprite", "Nottingham Hound": "wolf", "Sheriff's Archer": "archer", "Tax Collector": "collector", "Sergeant-at-Arms": "sergeant", "Guy of Gisborne": "guy", "Sheriff of Nottingham": "sheriff", "Robin Hood": "robin", "Maid Marian": "marian", "Will Scarlet": "scarlet", "Friar Tuck": "tuck", "Black Knight": "knight", "The Great Dragon": "wyrm", "Much the Miller's Son": "much", "Alan-a-Dale": "alan", "Morgan le Fay": "morgan", "Saxon Raider": "raider", "Merry Man Archer": "merry", "Sir Richard at the Lee": "lee", "King Richard the Lionheart": "lionheart", "Morgause's Hound": "hound", "Bog Hag": "hag", "Mordred's Guard": "mordred", "King Arthur": "arthur", "Merlin": "merlin", "Sir Lancelot": "lancelot", "Queen Guinevere": "guinevere", "Sir Bedivere": "bedivere", "Sir Kay": "kay", "Sir Gawain": "gawain", "Sir Percival": "percival", "Lady of the Lake": "lake", "Sir Galahad": "galahad", "Alice": "alice", "March Hare": "hare", "Card Soldier": "cardsoldier", "Knave of Hearts": "knave", "The Duchess": "duchessenemy", "Royal Executioner": "executioner", "Bandersnatch": "bandersnatch", "Queen of Hearts": "queenhearts", "Dormouse Dozer": "dormouse", "The Dodo": "dodo", "Bill the Lizard": "lizard", "Blue Caterpillar": "caterpillar", "Tweedledum and Tweedledee": "tweedle", "Wonderland Duchess": "duchesshero", "White Rabbit": "rabbit", "White Knight": "whiteknight", "Humpty Dumpty": "humpty", "Red Queen": "redqueen", "White Queen": "whitequeen", "Looking-Glass Alice": "glassalice", "Vorpal Knight": "vorpal", "Tulgey Wood Wanderer": "wanderer", "The Lion and the Unicorn": "lionunicorn", "The Walrus and the Carpenter": "walruscarpenter", "Chess Pawn": "pawn", "Jubjub Bird": "jubjub", "Walrus Thief": "walrusthief", "Red Bishop": "bishop", "Red Knight": "redknight", "Jabberwock": "jabberwock", "Mad Hatter": "hatteratlas", "Cheshire Cat": "cheshireatlas", "John Darling": "johndarling", "Michael Darling": "michaeldarling", "Nana the Nursemaid": "nana", "Tootles": "tootles", "Slightly Soiled": "slightly", "Tiger Lily": "tigerlily", "Mr. Smee": "smee", "Tinker Bell": "tinker", "The Crocodile": "crochero", "Peter Pan": "peter", "Pirate Deckhand": "deckhand", "Pirate Cook": "piratecook", "Tick-Tock Crocodile": "ticktock", "Starkey": "starkey", "Lagoon Siren": "siren", "Captain Hook": "hook", "Piglet": "piglet", "Roo": "roo", "Eeyore": "eeyore", "Small the Beetle": "beetle", "Tigger": "tigger", "Rabbit": "woodrabbit", "Wise Owl": "owl", "Kanga": "kanga", "Christopher Robin": "christopher", "Winnie-the-Pooh": "pooh", "Honey Bee Swarm": "bees", "Woozle": "woozle", "Gloomy Cloud": "gloom", "Heffalump": "heffalump", "Bouncy Thistle": "thistle", "The Great Backson": "backson", "Mole": "mole", "Water Rat": "waterrat", "Otter": "otter", "Portly the Pup": "portly", "Barge Woman": "bargewoman", "Mr. Toad": "toad", "Gaoler's Daughter": "gaolerdaughter", "Mr. Badger": "badger", "Sea Rat": "searat", "The Piper at the Gates of Dawn": "piper", "Stoat Guard": "stoat", "Weasel Sentry": "weasel", "Ferret Bruiser": "ferret", "Gaol Warden": "warden", "Wild Wood Fox": "woodfox", "Chief Weasel": "chiefweasel", "Flopsy Bunny": "flopsy", "Mopsy Bunny": "mopsy", "Cottontail": "cottontail", "Tom Kitten": "tomkitten", "Benjamin Bunny": "benjamin", "Jemima Puddle-Duck": "jemima", "Squirrel Nutkin": "nutkin", "Mrs. Tiggy-Winkle": "tiggy", "Jeremy Fisher": "jeremy", "Peter Rabbit": "peterbunny", "Hungry Crow": "crow", "Garden Slug": "slug", "Foraging Rat": "foragingrat", "Old Brown the Owl": "oldbrown", "Tod the Fox": "todfox", "Farmer McGregor": "mcgregor", "Oberon": "oberon"};
+const specialAtlases = {"littlejohn": "johnspecial", "oberon": "oberonspecial"};
+const characterPortraits = {"Mad Hatter": "hatterportrait", "Cheshire Cat": "cheshireportrait", "Tinker Bell": "tinkerportrait", "Mr. Smee": "smeeportrait", "Oberon": "oberonportrait"};
 function spriteFor(name) {
  const atlas=spriteAtlases[name.replace(/^(MINI|AREA|REALM) BOSS /, "")];
- return atlas ? `<span class="atlas-sprite" aria-hidden="true" style="background-image:var(--sprite-${atlas})"></span>` : '';
+ return atlas ? `<span class="atlas-sprite" aria-hidden="true" data-sprite="${atlas}" style="background-image:var(--sprite-${atlas})"></span>` : '';
 }
 function playSprite(u, move) {
  const sprite=u.inEl.querySelector('.atlas-sprite:not(.single)');
  if(!sprite||!sprite.animate||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  const charged=move!==0&&move!=='basic';
- const alternate=u.hid==='littlejohn' && (move===2 || move===3);
+ const alternate=(move===2||move===3) ? specialAtlases[u.hid] : null;
  const row=alternate ? (move===3?'100%':'0%') : (charged?'100%':'0%');
- const idleImage=sprite.style.backgroundImage;
- if(alternate) sprite.style.backgroundImage='url(assets/johnspecial.webp)';
+ const idleImage=`var(--sprite-${sprite.dataset.sprite})`;
  sprite.getAnimations().forEach(animation=>animation.cancel());
+ if(alternate)sprite.style.backgroundImage=`var(--sprite-${alternate})`;
  const motion=sprite.animate([0,1,2,3,0].map((column,index)=>({
   backgroundPosition:`${column*100/3}% ${index===4?'0%':row}`
  })),{duration:(charged?540:360)/B.speed,easing:'steps(4,end)'});
- if(alternate) motion.onfinish=()=>{sprite.style.backgroundImage=idleImage};
+ if(alternate)motion.onfinish=()=>{sprite.style.backgroundImage=idleImage};
 }
 function combatBurst(target, color, shape='') {
  const [x,y]=ctr(target);
@@ -364,7 +386,7 @@ function portrait(name, enemy=false, preferPortrait=false) {
  illustratedPortraits.set(key,art);
  return art;
 }
-const realmArt = {"Sherwood Forest": {"map": "campaignmap", "arena": "sherwood"}, "Camelot": {"map": "camelotmap", "arena": "camelot"}, "Wonderland": {"map": "wonderlandmap", "arena": "wonderland"}, "Looking-Glass Land": {"map": "glassmap", "arena": "glassarena"}, "Neverland": {"map": "nevermap", "arena": "neverarena"}, "Hundred Acre Wood": {"map": "woodmap", "arena": "woodarena"}, "Wild Wood and River Bank": {"map": "rivermap", "arena": "riverarena"}};
+const realmArt = {"Sherwood Forest": {"map": "campaignmap", "arena": "sherwood"}, "Camelot": {"map": "camelotmap", "arena": "camelot"}, "Wonderland": {"map": "wonderlandmap", "arena": "wonderland"}, "Looking-Glass Land": {"map": "glassmap", "arena": "glassarena"}, "Neverland": {"map": "nevermap", "arena": "neverarena"}, "Hundred Acre Wood": {"map": "woodmap", "arena": "woodarena"}, "Wild Wood and River Bank": {"map": "rivermap", "arena": "riverarena"}, "Garden of Beatrix": {"map": "gardenmap", "arena": "gardenarena"}};
 const paintedRealms = new Map();
 function landscape(realm, map) {
  const asset=realmArt[realm.n]?.[map?'map':'arena'];
@@ -952,6 +974,7 @@ function stars(o){return ' '+'★'.repeat(o.star+1)}
 function chipH(id){const h=HM[id],o=S.owned[id];return `<div class="chip ${o.gold?'gold':''}" style="border-color:${RC[h.r]}"><div class="e">${portrait(h.name)}</div><div class="n">${h.name}<br>Lv ${o.lv}${stars(o)}</div></div>`}
 
 const NODEP=[[14,84],[36,89],[58,82],[80,70],[84,50],[64,42],[42,48],[20,38],[18,18],[46,10]];
+const GARDEN_ROUTE=[[48,87],[39,74],[51,65],[52,52],[37,45],[23,41],[39,31],[55,33],[69,39],[85,35]];
 const RIVER_ROUTE=[[47,88],[31,81],[17,75],[21,62],[12,49],[28,44],[44,41],[58,36],[68,28],[82,19]];
 const WOOD_ROUTE=[[51,86],[28,79],[29,67],[15,55],[28,42],[43,40],[57,42],[71,35],[69,22],[86,14]];
 const NEVERLAND_ROUTE=[[54,86],[67,78],[79,65],[75,53],[90,46],[80,35],[65,38],[60,25],[73,23],[88,19]];
@@ -963,7 +986,8 @@ const mapThemes={
  'Looking-Glass Land':{className:'glass',points:GLASS_ROUTE,color:'#d6e7ff'},
  'Neverland':{className:'neverland',points:NEVERLAND_ROUTE,color:'#a5f2da'},
  'Hundred Acre Wood':{className:'hundredwood',points:WOOD_ROUTE,color:'#ffe5a3'},
- 'Wild Wood and River Bank':{className:'riverbank',points:RIVER_ROUTE,color:'#cceba4'}
+ 'Wild Wood and River Bank':{className:'riverbank',points:RIVER_ROUTE,color:'#cceba4'},
+ 'Garden of Beatrix':{className:'beatrix',points:GARDEN_ROUTE,color:'#fff0a8'}
 };
 function lineupCard(name, art, detail) {
  return `<div class="fighter"><div class="fighter-art">${art}</div><strong>${name}</strong><div class="small">${detail}</div></div>`;
@@ -999,10 +1023,10 @@ function vBattle(){
  <section class="card stage-brief" aria-labelledby="stageTitle">
   <div class="brief-head"><div><div class="brief-kicker">Battle briefing</div><h2 id="stageTitle">Stage ${lbl(n)}</h2></div><span class="stage-status">${first?(en[0].boss?'Boss encounter':'First clear available'):'✓ Cleared'}</span></div>
   ${beatHtml(n)}
-  <div class="matchup">
-   <section class="lineup"><h3>Your Squad</h3>${S.squad.map(id=>lineupCard(HM[id].name,portrait(HM[id].name),`Lv ${S.owned[id].lv}${stars(S.owned[id])}`)).join('')}</section>
+  <div class="matchup ${Math.max(S.squad.length,en.length)>2?'compact':''}">
+   <section class="lineup"><h3>Your Squad</h3><div class="lineup-grid" data-count="${S.squad.length}">${S.squad.map(id=>lineupCard(HM[id].name,portrait(HM[id].name),`Lv ${S.owned[id].lv}${stars(S.owned[id])}`)).join('')}</div></section>
    <span class="versus" aria-hidden="true">VS</span>
-   <section class="lineup enemy"><h3>Enemies</h3>${en.map(e=>lineupCard(e.name,portrait(e.name,true),`Weak ${CATI[e.weak]} · Resists ${CATI[e.res]}`)).join('')}</section>
+   <section class="lineup enemy"><h3>Enemies</h3><div class="lineup-grid" data-count="${en.length}">${en.map(e=>lineupCard(e.name,portrait(e.name,true),`Weak ${CATI[e.weak]} · Resists ${CATI[e.res]}`)).join('')}</div></section>
   </div>
   <div class="small scout-notes"><b>${sps.length?`Enemy specials · ${sps.map(k=>ES[k].n).join(', ')}`:'Enemy specials · None'} </b><br>Weakness +25% damage · Resistance −20% damage<br>⚔️ Single hit · 🏹 Piercing · 💫 Stun · 🌀 Area · ☠️ Poison</div>
   <button class="btn" id="fight">⚔️ FIGHT</button>
@@ -1281,7 +1305,7 @@ function exportSave(){let c='';try{c=btoa(unescape(encodeURIComponent(JSON.strin
  <button class="btn" onclick="const t=$('#sv');t.select();try{navigator.clipboard.writeText(t.value)}catch(e){document.execCommand('copy')}this.textContent='Copied!'">Copy</button><button class="btn sec" onclick="closeM()">Close</button>`)}
 function importSaveUI(){modal(`<h2 class="center">📥 Load save code</h2><div class="small center">This replaces your current progress.</div><textarea id="sv" style="width:100%;height:120px;background:#0008;color:#fff;border:1px solid #ffffff33;border-radius:8px;font-size:11px"></textarea>
  <div class="small center" id="svm" style="color:#ff6b6b"></div><button class="btn" onclick="doImport()">Load</button><button class="btn sec" onclick="closeM()">Cancel</button>`)}
-function doImport(){try{const o=JSON.parse(decodeURIComponent(escape(atob($('#sv').value.trim()))));if(!o||!o.owned||!o.squad)throw 0;S=o;migrate();save();closeM()}catch(e){$('#svm').textContent='That code did not work.'}}
+function doImport(){try{const o=JSON.parse(decodeURIComponent(escape(atob($('#sv').value.trim()))));if(!o||!o.owned||!o.squad)throw 0;S=migrate(o);save();closeM()}catch(e){$('#svm').textContent='That code did not work.'}}
 /* ---- hub view ---- */
 let hubSec='home',hubMsg='';
 const HUBS=[['quests','📜 Quests'],['exp','🧭 Expeditions'],['col','🏆 Collection'],['tower','🗼 Tower'],['raid','🐲 Raid'],['arena','⚔️ Arena'],['story','📖 Story'],['set','⚙️ Settings']];
@@ -1670,7 +1694,7 @@ function startBattle(n,opts){opts=opts||null;
  const realm=realmOf((opts&&opts.bgN)||n);
  const stg=$('#stage');
  stg.classList.toggle('painted',Boolean(realmArt[realm.n]?.arena));
- stg.classList.remove('glass','neverland','hundredwood','riverbank');
+ stg.classList.remove('glass','neverland','hundredwood','riverbank','beatrix');
  const arenaTheme=realmArt[realm.n]?.arena&&mapThemes[realm.n]?.className;
  if(arenaTheme)stg.classList.add(arenaTheme);
  stg.style.setProperty('--sk1',realm.sk[0]);stg.style.setProperty('--sk2',realm.sk[1]);
@@ -1696,14 +1720,62 @@ function buildEl(u){
  u.el=d;u.inEl=d.querySelector('.in');u.hpI=d.querySelector('.hp i');u.stEl=d.querySelector('.st');u.windEl=d.querySelector('.wind');
  if(u.side==='e')d.onclick=()=>{if(u.hp>0&&B){B.focus=u;draw()}};
 }
+const commandIcons={
+ single:'M4 20 20 4M14 4h6v6M4 14l6 6',
+ pierce:'M3 12h18m-6-6 6 6-6 6',
+ aoe:'M12 2v4m0 12v4M2 12h4m12 0h4M6 6l3 3m6 6 3 3m0-12-3 3m-6 6-3 3',
+ stun:'M13 2 5 14h7l-1 8 8-12h-7Z',
+ dot:'M12 3c4 6 7 9 7 13a7 7 0 0 1-14 0c0-4 3-7 7-13Z',
+ support:'M12 5v14M5 12h14',
+ guard:'M12 3 4 6v5c0 5 3 8 8 10 5-2 8-5 8-10V6Z',
+ ultimate:'m12 2 2.8 6.6 7.2.6-5.5 4.8 1.7 7-6.2-3.8L5.8 21l1.7-7L2 9.2l7.2-.6Z'
+};
+function commandIcon(hero,idx){
+ const move=MV[hero.mv[idx]];
+ const type=idx===3?'ultimate':['guard','shield'].includes(move.t)?'guard':['heal','healall','buff'].includes(move.t)?'support':moveCat(move);
+ return `<svg viewBox="0 0 24 24"><path d="${commandIcons[type]}"/></svg>`;
+}
 function buildCmd(){
- $('#cmd').innerHTML=B.ps.map((u,j)=>{
-  const btns=[3,2,1,0].map(idx=>{const nm=u.mn[idx];
-   return `<button class="mb ${idx===3?'ult':''}" data-j="${j}" data-i="${idx}"><span class="ic">${u.mi[idx]}</span><span class="mn">${nm}</span><span class="cdv"></span></button>`}).join('');
-  return `<div class="hcol"><div class="hh"><span class="he">${portrait(u.name,u.side==='e')}</span><div class="hbars"><div class="bar hp"><i></i></div><div class="bar rg"><i></i></div></div></div>${btns}</div>`}).join('');
+ const party=B.ps.map(u=>`<div class="hcol" title="${u.name}"><span class="he">${portrait(u.name)}</span><div class="hbars"><div class="bar hp"><i></i></div><div class="bar rg"><i></i></div></div></div>`).join('');
+ const decks=B.ps.map((u,j)=>`<div class="move-deck" hidden>${u.mn.map((name,idx)=>`<button type="button" class="mb" data-j="${j}" data-i="${idx}" disabled><span class="ic" aria-hidden="true">${commandIcon(u,idx)}</span><span><span class="mn">${name}</span><span class="cdv"></span></span></button>`).join('')}</div>`).join('');
+ $('#cmd').innerHTML=`<div class="command-party" aria-label="Squad status">${party}</div><div class="command-header"><strong id="commandHero"></strong><span id="commandState"></span></div>${decks}`;
  const cols=document.querySelectorAll('#cmd .hcol');
- B.ps.forEach((u,j)=>{u.col=cols[j];u.cHp=cols[j].querySelector('.hp i');u.cRg=cols[j].querySelector('.rg i');
-  const bs=cols[j].querySelectorAll('.mb');u.btns={3:bs[0],2:bs[1],1:bs[2],0:bs[3]}});
+ const panels=document.querySelectorAll('#cmd .move-deck');
+ B.ps.forEach((u,j)=>{
+  u.col=cols[j];
+  u.cHp=u.col.querySelector('.hp i');
+  u.cRg=u.col.querySelector('.rg i');
+  u.deck=panels[j];
+  u.btns=u.deck.querySelectorAll('.mb');
+ });
+}
+function drawCommands(){
+ const active=B.active?.side==='p'&&B.active.hp>0 ? B.active : null;
+ if(active||!B.commandHero||B.commandHero.hp<=0)B.commandHero=active||alive('p')[0]||B.ps[0];
+ const hero=B.commandHero;
+ const canAct=active===hero&&B.waiting&&!B.auto&&!B.over;
+ $('#commandHero').textContent=hero.name;
+ $('#commandState').textContent=B.auto?'Auto-battle':canAct?'Choose a move':active?'Resolving turn':'Waiting for turn';
+ B.ps.forEach(u=>{
+  u.col.classList.toggle('dead',u.hp<=0);
+  u.col.classList.toggle('rdy',u===hero&&canAct);
+  u.cHp.style.width=Math.max(0,u.hp/u.maxhp*100)+'%';
+  u.cRg.style.width=u.rage+'%';
+  u.deck.hidden=u!==hero;
+ });
+ hero.btns.forEach((button,idx)=>{
+  const usable=isUsable(hero,idx);
+  const ready=canAct&&usable;
+  const cooldown=hero.cd[hero.mv[idx]]||0;
+  let status=idx===0?'Basic':idx===3?'Ultimate':'Skill';
+  if(hero.lvl<UNL[idx])status='Unlocks at Lv '+UNL[idx];
+  else if(idx===3)status=usable?'Ultimate ready':'Ultimate · '+Math.floor(hero.rage)+'%';
+  else if(cooldown)status=cooldown+' '+(cooldown===1?'turn':'turns')+' left';
+  button.disabled=!ready;
+  button.classList.toggle('ult',idx===3);
+  button.classList.toggle('go',ready);
+  button.querySelector('.cdv').textContent=status;
+ });
 }
 $('#cmd').addEventListener('click',e=>{const b=e.target.closest('.mb');if(!b||!B||B.over)return;press(+b.dataset.j,+b.dataset.i)});
 
@@ -1736,7 +1808,7 @@ function proj(a,t,kind='magic'){
  const [x1,y1]=ctr(a),[x2,y2]=ctr(t);
  const dx=x2-x1,dy=y2-y1,angle=Math.atan2(dy,dx);
  const arrow=kind==='arrow';
- const trail={arrow:'#ffe3a1',hex:'#dc94ff',pixie:'#a0f8ba',honey:'#ffd075',storm:'#aebdff',river:'#a9ead6'}[kind]||'#8ce2ff';
+ const trail={arrow:'#ffe3a1',hex:'#dc94ff',pixie:'#a0f8ba',honey:'#ffd075',storm:'#aebdff',river:'#a9ead6',midsummer:'#ddb4ff'}[kind]||'#8ce2ff';
  const d=document.createElement('div');
  d.className='pj tracer';
  d.style.cssText=`left:${x1}px;top:${y1}px;--trail:${trail}`;
@@ -1854,7 +1926,7 @@ function isUsable(u,idx){
 function press(j,idx){
  if(!B||B.over||!B.waiting)return;
  const u=B.ps[j];if(!u||u!==B.active||u.hp<=0)return;
- if(!isUsable(u,idx)){if(u.btns[idx].animate)u.btns[idx].animate([{transform:'translateX(-3px)'},{transform:'translateX(3px)'},{transform:'none'}],{duration:150});return}
+ if(!isUsable(u,idx))return;
  B.waiting=false;
  doMove(u,idx);
 }
@@ -1875,10 +1947,11 @@ function doMove(u,idx){
  else if(m.cd)u.cd[k]=Math.max(1,cdTurns(m)-(rank>=3?1:0)-(rank>=5?1:0))+1;
  u.rage=Math.min(100,u.rage+(m.ult?0:14));
  playSprite(u,idx);
- if(m.ult)combatBurst(u,'#ffd777');
+ if(m.ult)combatBurst(u,u.hid==='oberon'?'#ddb4ff':'#ffd777');
+ if(u.hid==='oberon'&&idx===2)combatBurst(tg,'#b8a3ff');
  const archer=rangedArchers.has(u.name);
  const fairy=u.hid==='tinker';
- const projectile=archer?'arrow':fairy?'pixie':u.name==='The Piper at the Gates of Dawn'?'river':'magic';
+ const projectile=archer?'arrow':fairy?'pixie':u.hid==='oberon'?'midsummer':u.name==='The Piper at the Gates of Dawn'?'river':'magic';
  const caster=fairy||HM[u.hid]?.arch==='mage';
  const melee=['dmg','stun','dot'].includes(m.t)&&!m.ult&&k!=='pierce'&&!archer&&!caster;
  if(melee)lunge(u,tg);
@@ -2063,24 +2136,7 @@ function draw(){
  // turn order bar
  const ord=[B.active].concat(B.queue).filter(u=>u&&u.hp>0);
  $('#order').innerHTML='<span class="rl">Round '+Math.max(1,B.round)+'</span>'+ord.map((u,i)=>`<span class="oc ${u.side} ${i===0?'now':''}">${portrait(u.name,u.side==='e')}</span>`).join('');
- B.ps.forEach(u=>{
-  const mine=B.active===u&&B.waiting&&!B.auto&&u.hp>0;
-  u.col.classList.toggle('dead',u.hp<=0);
-  u.col.classList.toggle('rdy',mine);
-  u.col.classList.toggle('wait',!mine&&u.hp>0);
-  u.cHp.style.width=Math.max(0,u.hp/u.maxhp*100)+'%';
-  u.cRg.style.width=u.rage+'%';
-  for(let idx=0;idx<4;idx++){
-   const b=u.btns[idx],k=u.mv[idx],locked=u.lvl<UNL[idx];
-   let cls='mb'+(idx===3?' ult':''),txt='';
-   if(locked){cls+=' lock';txt='🔒Lv'+UNL[idx]}
-   else if(idx===3){if(u.rage<100){cls+=' cd';txt=Math.floor(u.rage)+'%'}}
-   else if((u.cd[k]||0)>0){cls+=' cd';txt=u.cd[k]+'T'}
-   if(mine&&!locked&&isUsable(u,idx))cls+=' go';
-   if(b._c!==cls)b.className=cls;b._c=cls;
-   const cv=b.lastChild;if(cv.textContent!==txt)cv.textContent=txt;
-  }
- });
+ drawCommands();
 }
 
 /* ---------- results ---------- */
@@ -2145,6 +2201,8 @@ $('#openBook').onclick=()=>{
 </script>
 </body>
 </html>
+
+
 
 
 

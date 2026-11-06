@@ -1,5 +1,14 @@
 # Changelog
 
+## Garden and Combat Update
+
+- Added a painted Garden of Beatrix map, wide and portrait garden arenas, and dedicated combat sprites for all 10 heroes and six enemies in the realm.
+- Added Oberon's illustrated Draw card and combat sprites, including dedicated Dream Quake and Midsummer Spell sequences.
+- Reworked the battle command panel with four larger move buttons for the active hero, named cooldowns and unlock levels, and an ultimate charge indicator.
+- Added a compact two-column matchup layout for larger squads and enemy lineups.
+- Fixed import of older save codes so missing progression fields are restored when the code loads.
+- Dedicated combat sprites now cover 81 heroes and 49 enemies across the game.
+
 ## Major Graphics Update
 
 - Added an illustrated title screen, a campaign atlas, a redesigned Adventure briefing, and larger side-by-side lineups.
