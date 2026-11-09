@@ -1,6 +1,6 @@
 # 📖 Storybook Brawl
 
-**A fairy-tale gacha team auto-battler for your phone.** Collect 250 heroes from classic British and American stories, build a squad of four, and fight through **750 story stages across 25 realms** to restore Mother Goose's bleeding Book.
+**A fairy-tale gacha team auto-battler for your phone.** Collect 169 active heroes from classic British and American stories, build a squad of four, and fight through **750 story stages across 25 realms** to restore Mother Goose's bleeding Book.
 
 ## Quick start
 
@@ -24,12 +24,12 @@ For web hosting, upload the contents of the `storybook-brawl` folder together.
 - A long-running mystery about the Narrator pays off in the final realm.
 - After the last realm the game loops into a harder "Second Reading".
 
-### 250 collectible heroes
+### 169 collectible heroes
 - Heroes and side characters from British and American tales and legends: Robin Hood, King Arthur, Alice, Peter Pan, Pooh, Sherlock Holmes, Dorothy, Santa, Pecos Bill and many more.
 - Every hero has a **profile**: an epithet, a quote and a backstory, plus star-unlocked "Hero tales".
 - Every hero has a **stats card** (stat bars, role, growth, star perks and bonds).
 - Every hero has **their own four moves**, including a signature ultimate. No two heroes share a kit.
-- Rarity is extreme: **80 Common, 70 Uncommon, 55 Rare, 30 Epic, 15 Legendary**. Completing the whole roster takes a very long time.
+- Recruitment includes the 169 heroes with finished combat artwork. Previously owned heroes from older saves remain usable.
 
 ### 25 realms that match their stories
 1. **Sherwood Forest**, guarded by *Sheriff of Nottingham*
